@@ -8,5 +8,7 @@ type UserRoute struct {
 }
 
 func (r UserRoute) Route(route *gin.RouterGroup) {
+	userRepository.Init(Users{})
+
 	route.POST("/", handler.CreateUserData)
 }

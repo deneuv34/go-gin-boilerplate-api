@@ -1,17 +1,9 @@
 package users
 
-import "fdnBaseAPI/commons/config"
+import (
+	"fdnBaseAPI/commons/repository"
+)
 
-type UserRepository struct{}
-
-func (r UserRepository) CreateNewUser(data interface{}) Users {
-	return Users{}
-}
-
-func Create(data interface{}) (*Users, error) {
-	db := config.GetDB()
-	var user Users
-	err := db.Table("users").Model(&user).Create(data).Error
-
-	return &user, err
+type UserRepository struct{
+	repository.BaseRepository
 }

@@ -7,7 +7,7 @@ import (
 	"log"
 )
 
-var route users.UserRoute
+var user users.UserRoute
 
 func main() {
 	// connect to DB
@@ -16,7 +16,7 @@ func main() {
 	defer db.Close()
 
 	r := gin.Default()
-	route.Route(r.Group("/user"))
+	user.Route(r.Group("/user"))
 
 	err := r.Run()
 	if err != nil {

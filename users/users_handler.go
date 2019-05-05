@@ -1,7 +1,6 @@
 package users
 
 import (
-	"fdnBaseAPI/validation"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
@@ -11,7 +10,7 @@ type UserHandler struct {
 }
 
 func (handler UserHandler) CreateUserData(c *gin.Context) {
-	var request validation.CreateUserRequest
+	var request Users
 	var userService UserService
 	err := c.Bind(&request)
 	if err != nil {
