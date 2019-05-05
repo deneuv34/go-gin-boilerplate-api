@@ -14,7 +14,7 @@ type Database struct {
 var DB *gorm.DB
 
 func InitDB() *gorm.DB {
-	db, err := gorm.Open("mysql", "rangga:adhitya@root/base_api")
+	db, err := gorm.Open("mysql", "root:adhitya00@/base_api?charset=utf8&parseTime=True&loc=Local")
 	if err != nil {
 		log.Panic("Cannot connect to database: ", err)
 	}

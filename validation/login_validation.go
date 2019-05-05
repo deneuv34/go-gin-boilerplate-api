@@ -1,10 +1,5 @@
 package validation
 
-import (
-	"fdnBaseAPI/users"
-	"github.com/gin-gonic/gin"
-)
-
 type CreateUserRequest struct {
 	FullName string `json:"full_name"`
 	Email    string `json:"email"`
@@ -13,10 +8,5 @@ type CreateUserRequest struct {
 }
 
 type UserValidation struct {
-	CreateUser CreateUserRequest
-	Users      users.Users
-}
-
-func (self UserValidation) Bind(c *gin.Context) error {
-	err := c.Bind(c, self)
+	User CreateUserRequest `json:"user"`
 }

@@ -12,3 +12,7 @@ type Users struct {
 	UpdatedAt time.Time
 	DeletedAt *time.Time `sql:"index"`
 }
+
+func (u Users) TableName() string {
+	return "users"
+}
