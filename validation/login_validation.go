@@ -7,6 +7,10 @@ type CreateUserRequest struct {
 	Password string `json:"password"`
 }
 
+func (r CreateUserRequest) TableName() string {
+	return "user_data"
+}
+
 type UserValidation struct {
 	User CreateUserRequest `json:"user"`
 }
