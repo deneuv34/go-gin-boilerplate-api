@@ -2,8 +2,6 @@ package repository
 
 import "fdnBaseAPI/commons/config"
 
-var entity interface{}
-
 type BaseRepository struct {
 	Model interface{}
 	TableName string
